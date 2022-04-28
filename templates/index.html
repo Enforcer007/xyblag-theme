@@ -16,6 +16,15 @@
         {% for page in paginator.pages %}
             <article class="post-block">
                 {{ post_macros::title(page=page) }}
+                {% if config.extra.post__thumbnail %}
+                    {% if config.extra.post__thumbnail.width and config.extra.post__thumbnail.height %}
+                        {{ post_macros::thumbnail(page=page, width=config.extra.post__thumbnail.width, height=config.extra.post__thumbnail.height) }}
+                    {% elif config.extra.post__thumbnail.width %}
+                        {{ post_macros::thumbnail(page=page, width=config.extra.post__thumbnail.width, height="auto") }}
+                    {% elif config.extra.post__thumbnail.height %}
+                        {{ post_macros::thumbnail(page=page, width="auto",height=config.extra.post__thumbnail.height) }}
+                    {% endif %}
+                {% endif %}
             </article>
         {% endfor %}
     </div>
