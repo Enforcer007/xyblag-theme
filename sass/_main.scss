@@ -1,4 +1,4 @@
-$cover-max-screen-width: 2 * 200px + $body-width !default;
+$cover-max-screen-width: 2 * 200px+$body-width !default;
 
 main {
   clear: both;
@@ -24,6 +24,15 @@ main {
   }
 
   .about,
+  .post-block {
+    .post__thumbnail {
+      img {
+        width: auto;
+        height: 200px;
+      }
+    }
+  }
+
   .post {
     padding: 1.5rem 0;
     font-size: 24px;
@@ -42,12 +51,14 @@ main {
 
     .post-content {
       font-family: $serif-font;
+
       a {
         color: var(--text-color);
         text-decoration: none;
         border-bottom: 2px dotted var(--secondary-color);
 
         transition: border 1s ease;
+
         &:hover {
           border-bottom: 2px solid var(--primary-color);
         }
@@ -64,12 +75,14 @@ main {
       margin-bottom: 0.25rem;
       font-weight: 600;
       color: var(--post-heading-color);
+
       a {
         color: var(--post-heading-color) !important;
       }
     }
 
     .post-content {
+
       h1,
       h2,
       h3,
@@ -78,14 +91,17 @@ main {
       h6 {
         margin-bottom: 0.2rem;
       }
+
       h1,
       h2 {
         margin-top: 4rem;
       }
+
       h3,
       h4 {
         margin-top: 3rem;
       }
+
       h5,
       h6 {
         margin-top: 1.5rem;
@@ -111,10 +127,12 @@ main {
       z-index: 100;
       position: relative;
       margin-bottom: 5rem;
+
       @media (min-width: $cover-max-screen-width) {
         width: $body-width + 400px;
         margin-left: -200px;
       }
+
       p {
         text-align: center;
         font-family: $ui-font;
@@ -137,7 +155,7 @@ main {
       color: var(--code-block-color);
     }
 
-    pre > code {
+    pre>code {
       display: block;
       border: none;
       font-style: normal;
@@ -164,6 +182,7 @@ main {
         margin-bottom: -0.5em;
         float: left;
       }
+
       margin: 1.5em 0;
       padding: 10px 20px;
       position: relative;
@@ -277,11 +296,13 @@ main {
       transition: all 0.25s ease-in-out;
       padding: 0.25rem 1rem;
       border-radius: 12px;
+
       &:hover {
         transform: scale(1.05);
         color: var(--tag-hover-color);
         background-color: var(--primary-color);
       }
+
       &:active {
         transform: scale(1);
       }
@@ -325,6 +346,7 @@ main {
   background-image: url('/blag/images/end-post.svg');
   background-position: right;
   background-repeat: no-repeat;
+
   @include sm {
     background-size: contain;
   }
@@ -348,6 +370,7 @@ main {
 .next {
   float: right;
   margin-right: -1rem;
+
   &:hover {
     transform: translateX(4px);
   }
@@ -356,6 +379,7 @@ main {
 .previous {
   float: left;
   margin-left: -1rem;
+
   &:hover {
     transform: translateX(-4px);
   }
@@ -436,9 +460,11 @@ footer {
   display: flex;
   font-size: 1.3rem;
   justify-content: space-between;
+
   a:hover {
     color: var(--primary-color);
   }
+
   padding: 1rem 0 2rem;
 
   @include sm {

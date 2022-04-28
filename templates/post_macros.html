@@ -13,8 +13,12 @@
                 </div>
             {% endif %}
         </div>
+        <div class="post__thumbnail">
+            <img src="{{ page.path }}{{  page.extra.metadata_image }}"></img>
+        </div>
     </header>
 {% endmacro title %}
+
 {% macro disqus(page, config) %}
 {% if config.extra.disqus_shortname %}
     <h1>Comments</h1>
