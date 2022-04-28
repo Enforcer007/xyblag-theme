@@ -1,3 +1,12 @@
+
+{% macro thumbnail(page,width,height) %}
+<div class="post__thumbnail">
+    {% if page.extra.metadata_image %}
+    <img src="{{ page.path }}{{  page.extra.metadata_image }}" style="width: {{width}}; height:{{height}}"></img>
+    {% endif %}
+</div>
+{% endmacro thumbnail %}
+
 {% macro title(page) %}
     <header class="post__header">
         <h1 class="post__title">
@@ -13,9 +22,15 @@
                 </div>
             {% endif %}
         </div>
-        <div class="post__thumbnail">
-            <img src="{{ page.path }}{{  page.extra.metadata_image }}"></img>
-        </div>
+        {% if config.extra.post__thumbnail %}
+            {% if config.extra.post__thumbnail.width and config.extra.post__thumbnail.height %}
+                {{ post_macros::thumbnail(page=page, width=config.extra.post__thumbnail.width, height=config.extra.post__thumbnail.height) }}
+            {% elif config.extra.post__thumbnail.width %}
+                {{ post_macros::thumbnail(page=page, width=config.extra.post__thumbnail.width, height="auto") }}
+            {% elif config.extra.post__thumbnail.height %}
+                {{ post_macros::thumbnail(page=page, width="auto",height=config.extra.post__thumbnail.height) }}
+            {% endif %}
+        {% endif %}
     </header>
 {% endmacro title %}
 
