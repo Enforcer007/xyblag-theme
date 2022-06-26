@@ -1,5 +1,4 @@
 main .hero {
-
   .logo a {
     color: var(--text-color);
     font-weight: 600;
@@ -23,24 +22,15 @@ main .hero {
 }
 
 .index-list {
-  // display: grid;
-  // grid-template-columns: auto auto;
-  // grid-column-gap: 100px;
-
   .post-block {
     header {
       margin: inherit;
     }
-
     .post {
-
       &__header {
         margin: 3rem 0;
       }
-
       &__title {
-        // text-align: justify;
-        // text-justify: inter-character;
         font-size: 2rem;
         @include underline-from-center;
       }
