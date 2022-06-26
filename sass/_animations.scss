@@ -63,10 +63,12 @@
   padding: 0.5rem 1rem;
   border-radius: 12px;
   transition: all 0.25s ease-in-out;
+
   &:hover {
     background-color: var(--hover-focus-color);
     transform: scale(1.05);
   }
+
   &:active {
     background-color: var(--hover-active-color);
     transform: scale(1);

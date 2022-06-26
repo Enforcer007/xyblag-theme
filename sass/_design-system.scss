@@ -11,6 +11,7 @@ $theme-color-map: (
 );
 
 $dark-text: #34495e;
+
 :root,
 [data-theme='light'] {
   --primary-color: #{#33df97};
@@ -38,7 +39,7 @@ $ui-font: 'Jost*', 'Jost', sans-serif;
 
 // Layout / Sizes
 
-$body-width: 800px;
+$body-width: 1200px;
 $screen-sm-max: 800px;
 $mobile-navbar-height: 50px !default;
 

@@ -1,4 +1,6 @@
 main .hero {
+  text-align: center;
+
   .logo a {
     color: var(--text-color);
     font-weight: 600;
@@ -11,7 +13,7 @@ main .hero {
     font-size: 1.5rem;
     margin-top: 0.5rem;
     max-width: 100%;
-    width: 500px;
+    // width: 500px;
   }
 
   margin: 5rem 0;
@@ -22,14 +24,19 @@ main .hero {
 }
 
 .index-list {
+  display: grid;
+  grid-template-columns: auto auto;
+
   .post-block {
     header {
       margin: inherit;
     }
+
     .post {
       &__header {
         margin: 3rem 0;
       }
+
       &__title {
         font-size: 2rem;
         @include underline-from-center;
